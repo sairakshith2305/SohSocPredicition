@@ -1,0 +1,11 @@
+Flask
+pandas
+numpy
+sklearn
+matplotlib
+keras
+keras.models
+tensorflow-cpu==2.8.0
+protobuf==3.20.1
+pyswarms
+gunicorn

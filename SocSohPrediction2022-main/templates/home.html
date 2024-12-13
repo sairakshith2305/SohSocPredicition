@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Introduction</title>
+    <style>
+        * {
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+body {
+	margin: 0;	
+	font-family: 'Work Sans', sans-serif;
+}
+
+/* HEADINGS */
+
+h1, p {
+  color: black;
+  text-align: center;
+  line-height: 2em;
+  font-size: 14px;
+}
+
+p{
+    margin-bottom: 32px;
+}
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  color: #000;
+  font-size: 1.3rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.grad-bar {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+
+/* SECTIONS */
+
+.headline {
+  width: 100%;
+  height: 50vh;
+  min-height: 350px;
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1435224668334-0f82ec57b605?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin:0 auto;
+}
+
+.features {
+  width: 100%;
+  height: auto;
+  background-color: #f1f1f1;
+  display: flex;
+  padding: 50px 20px;
+  justify-content: space-around;
+}
+
+.feature-container {
+  flex-basis: 30%;
+  margin-top: 10px;
+}
+
+.feature-container p {
+  color: #000;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.feature-container img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* SEARCH FUNCTION */
+
+#search-icon {
+  font-size: 0.9rem;
+  margin-top: 3px;
+  margin-left: 15px;
+  transition: color 0.3s ease-out;
+}
+
+#search-icon:hover {
+  color: #3498db;
+  cursor: pointer;
+}
+
+.search {
+  transform: translate(-35%);
+  -webkit-transform: translate(-35%);
+  transition: transform 0.7s ease-in-out;
+  color: #3498db;
+}
+
+.no-search {
+  transform: translate(0);
+  transition: transform 0.7s ease-in-out;
+}
+
+.search-input {
+  position: absolute;
+  top: -4px;
+  right: -125px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+}
+
+.search-active {
+  opacity: 1;
+  z-index: 0;
+}
+
+input {
+  border: 0;
+  border-left: 1px solid #ccc;
+  border-radius: 0; /* FOR SAFARI */
+  outline: 0;
+  padding: 5px;
+}
+
+/* MOBILE MENU & ANIMATION */
+
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  background-color: #3f3f3f;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+  justify-self: end;
+  margin-right: 25px;
+  display: none;
+}
+
+.menu-toggle:hover{
+  cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1){
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3){
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* KEYFRAME ANIMATIONS */
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+/* Media Queries */
+
+  /* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 720px) { 
+  .features {
+    flex-direction: column;
+    padding: 50px;
+  }
+  
+  /* MOBILE HEADINGS */
+  
+  h1 {
+    font-size: 1.9rem;
+  }
+  
+  h2 {
+    font-size: 1rem;
+  }
+  
+  p {
+    font-size: 0.8rem;
+  }
+  
+  /* MOBILE NAVIGATION */
+     
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: start;
+    top: 55px;
+    background-color: #fff;
+    width: 100%;
+    height: calc(100vh - 55px);
+    transform: translate(-101%);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    padding: 15px;
+  }
+  
+  .navbar li:first-child {
+    margin-top: 50px;
+  }
+  
+  .navbar li a {
+    font-size: 1rem;
+  }
+   
+  .menu-toggle, .bar {
+    display: block;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+  transform: translate(0%)!important;
+}
+  
+  /* SECTIONS */
+  
+  .headline {
+    height: 20vh;
+  }
+    
+  .feature-container p {
+    margin-bottom: 25px;
+  }
+  
+  .feature-container {
+    margin-top: 20px;
+  }
+  
+  .feature-container:nth-child(2) {
+    order: -1;
+  }
+  
+  /* SEARCH DISABLED ON MOBILE */
+  
+  #search-icon {
+    display: none;
+  }
+  
+  .search-input {
+  display: none;
+ }
+}
+
+#images{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.figures{
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+    background: #EE7752;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 10;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+    padding-bottom: 23px;
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+#navbarstart{
+    padding: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+.content{
+    margin: 10px;
+}
+
+.card-text{
+    color: white;
+    text-align: justify;
+    font-size: larger;
+    font-weight: bold;
+    font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h3{
+    font-size: xx-large;
+}
+
+#card1{
+  background-color: #957F7F;
+}
+
+</style>
+</head>
+<body>
+    <div class="grad-bar"></div>
+    <div id="navbarstart">
+        <header>
+            <div class="container">
+              <h1 class="logo"></h1>
+              <nav>
+                <ul>
+                  <li><a href={{url_for('home')}}>Introduction</a></li>
+                  <li><a href={{url_for('models')}}>Models</a></li>
+                  <li><a href={{url_for('graph')}}>Graphs</a></li>
+                  <li><a href="https://drive.google.com/file/d/1VClk31P2C4-ZEOICSrpxE45lhHzKDYRU/view?usp=sharing">Report</a></li>
+                  <li><a href={{url_for('about')}}>About Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+    </div>
+         <section class="headline" >
+           <h1 style="color: white;">Learning Cycle Analysis of Lithium-ion Battery in E-vehicles</h1>
+         </section>
+        <br> 
+        <section class="content">
+            <div id="card1" class="card text-white bg-secondary mb-3">
+                <div class="card-header">
+                    <br>
+                    <h3> Why are Lithium-ion batteries used?</h3>
+                </div>
+                <div class="card-body">
+                  <img id = "images" src={{url_for('static', filename='./images/MamBattery.jpeg')}} alt="Battery" width="300px" height="300px">
+                   <p class="figures">Fig 1: Lithium-ion Battery</p> 
+                   <p class="card-text">Lithium-ion batteries have been one of the biggest market segments in the electric vehicle segment. 
+                These are the most commonly used batteries in the e-vehicle segment. They are known for their 
+                small and compact size and are commonly used in phones and laptops as well. With the increasing use in daily life of Lithium-ion batteries they have a continuous decline in the cost of price and increasing affordability. Lithium-ion batteries have a high power-to-weight ratio, high energy efficiency and good high-temperature performance. In practice, this means that the batteries hold a lot of energy for their weight, which is vital for electric cars – less weight means the car can travel further on a single charge. Lithium-ion batteries are having very low self-discharge rate which makes them better than other batteries at retaining the ability to hold charge over a period of time.
+                </p>
+                </div>
+              </div>
+              <div class="card text-white bg-dark mb-3">
+                <div class="card-header">
+                    <br>
+                    <h3> What is State of Health(SOH) and State of Charge(SOC) </h3>
+                </div>
+                <div class="card-body">
+                    <img id = "images" src={{url_for('static', filename='./images/soh.gif')}} alt="SOH Image" height="250px" width="350">
+                   <p class="figures">Fig 2: State Of Health</p> 
+                   <p class="card-text">Accurate health estimation and lifetime prediction of lithium-ion batteries are crucial for durable electric vehicles. State Of Health(SOH) represents the maximum discharge capacity to the rated capacity of batteries. Since the maximum discharge capacity is characteristic of battery aging, SOH is used as an indicator of degree of ageing. SOH of new battery with no degradation is processed in is 100%. When SOH value reaches 80%, that is the time for the replacement and can be regarded as reaching at an End of Life (EOL). The ageing of the battery can be seen in the above Fig 2. Here it shows as that with as the battery is ageing the capacity of the batter to hold charge is decreasing as well.</p>
+                   <img id = "images" src={{url_for('static', filename='./images/soc.gif')}} alt="SOC Image" height="250px" width="350">
+                   <p class="figures">Fig 3: State Of Charge</p>
+                   <p class="card-text">State of Charge(SOC) is the remaining capacity of the battery to the rated capacity of the battery at any given time. The SOC provides the information about how much longer the battery can perform before it needs to be put to charged or replaced. Understanding this parameter is important for predicting the state of the battery at any given time and this prediction intern will help in controlling the further actions of a system. In the above Fig 3 it can be seen that the capacity of the battery changing during the charge and discharge cycles.</p>
+                </div>
+              </div>
+              <div class="card text-white bg-secondary mb-3">
+                <div class="card-header">
+                    <br>
+                    <h3> Why SOH and SOC is required?</h3>
+                </div>
+                <div class="card-body">
+                   <p class="card-text">With the increasing global demand for energy conservation and environmental protection, electric vehicles have developed rapidly. Power batteries serve as the driving core of electric vehicles. Mainly lithium-ion batteries are widely used for various purposes, it is important to estimate their state of health (SOH) to ensure their efficiency and safety. State-of-health (SoH) and State-of-Charge (SoC) are key quality indicators as they provide very useful data needed for the optimization of the Battery Management System (BMS). Among various data management methods accurate state of charge (SOC) estimation plays an important role in the prediction of electric vehicle range and the safety protection of power batteries. Battery’s SOC and SOH estimation is mainly affected by voltage, current, and environment temperature with respect to time. So, initially we have calculated the SOC of the battery later by using that calculated the SOH values.</p>
+                </div>
+              </div>    
+            </section>
+</body>
+<script>
+    $("#search-icon").click(function() {
+  $(".nav").toggleClass("search");
+  $(".nav").toggleClass("no-search");
+  $(".search-input").toggleClass("search-active");
+});
+
+$('.menu-toggle').click(function(){
+   $(".nav").toggleClass("mobile-nav");
+   $(this).toggleClass("is-active");
+});
+
+</script>
+</html>

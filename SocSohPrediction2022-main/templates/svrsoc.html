@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = './js/ani.js') }}"></script>
+
+
+    <title>Learning Cycle Analysis of Lithium - ion battery</title>
+<style>
+ <style>
+    #navbarstart{
+    padding: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+.grad-bar {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+header {
+    background: #EE7752;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+
+nav ul {
+  margin: 0;
+  padding: 10;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+    padding-bottom: 23px;
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+#navbarstart{
+    padding: 5px;
+    padding-bottom: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+/* model*/
+
+.model{
+    text-align: center;
+    margin-top: 15px;
+    height:30px;
+    color: black;
+    padding-bottom: 10px;
+}
+.section-1{
+    position: absolute;
+    top : 46%;
+    left: 8%;
+    text-align: center;
+    background-color: none;
+}
+.section-2{
+    position: absolute;
+    top: 35%;
+    left:27%;
+    text-align: center;
+}
+
+.sectionforline2{
+    position: absolute;
+    top: 48%;
+    left:37%;
+}
+
+.section-3{
+    position: absolute;
+    top: 27%;
+    left:50%;
+    text-align: center;
+    border: black;
+}
+.section-4{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    text-align: center;
+}
+.section-5{
+    position: absolute;
+    top: 76%;
+    left:50%;
+    text-align: center;
+}
+
+.flowerbracket{
+    position: absolute;
+    top: 25%;
+    left :60%;
+    background-color: none;
+}
+
+.section-6{
+    position:absolute;
+    text-align: center;
+    top: 27%;
+    left: 78%;
+}
+
+.section-7{
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 78%;
+}
+.section-8{
+    position: absolute;
+    text-align: center;
+    top:76%;
+    left: 78%;
+}
+
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+#col{
+color:green;}
+#col2{
+color:red;}
+
+</style>
+</head>
+<body>
+    <div class="grad-bar"></div>
+    <div id="navbarstart">
+        <header>
+            <div class="container">
+              <h1 class="logo"></h1>
+              <nav>
+                <ul>
+                <li><a href={{url_for('home')}}>Introduction</a></li>
+                  <li><a href={{url_for('models')}}>Models</a></li>
+                  <li><a href={{url_for('graph')}}>Graphs</a></li>
+                  <li><a href="https://drive.google.com/file/d/1VClk31P2C4-ZEOICSrpxE45lhHzKDYRU/view?usp=sharing">Report</a></li>
+                  <li><a href={{url_for('about')}}>About Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+    </div>
+    <div class="model">
+        <h2>Support Vector Regression Model (SOC Prediction)</h2>
+    </div>
+
+    <section id="main">
+       
+        <section class="section-2">
+            <canvas id="myCanvas" width="200" height="100" style="border:0px solid #d3d3d3;"></canvas>
+            <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.moveTo(80,100);
+            ctx.lineTo(100,0);
+            ctx.lineTo(200,0)
+            ctx.lineWidth = 8;
+            ctx.stroke();
+            </script>
+            <div>
+                <img src="./static/images/battery.png" height="130" width="130"></img>
+            </div>
+            <canvas id="myCanvas1" width="200" height="100" style="border:0px solid #d3d3d3;"></canvas>
+            <script>
+                var d = document.getElementById("myCanvas1");
+                var dtx = d.getContext("2d");
+                dtx.moveTo(80,0);
+                dtx.lineTo(100,100);
+                dtx.lineTo(200,100);
+                dtx.lineWidth = 8;
+                dtx.stroke();
+            </script>
+        </section>
+        <section class="sectionforline2">
+            <canvas id="myCanvas3" width="200" height="150" style="border:0px solid #d3d3d3;"></canvas>
+            <script>
+                var f = document.getElementById("myCanvas3");
+                var ftx = f.getContext("2d");
+                ftx.moveTo(50,80);
+                ftx.lineTo(140,80);
+                ftx.lineWidth = 8;
+                ftx.stroke();
+            </script>
+        </section>
+     
+   {% for i in range(length) %}
+    <div>
+    <section class="section-1">
+            <div>
+            <img src="./static/images/clock.gif" height="150" width="150"/>
+            </div>
+        
+       <p style="border:black 2px solid; border-style:outset;" class="forloop6" index={{i}}> {{sortto[i][0][:10]}} </br> {{sortto[i][0][10:]}} </p>
+    </section>
+    
+    <section class="section-3">
+   
+        <div>
+            <img src="./static/images/capacity.png" height="65" width="65"/>
+        </div>
+       
+
+ <p class="forloop1"  style="border:black 2px solid; border-style:outset;" index={{i}}> {{sortto[i][4]}} </p>
+     </section>
+    <section class="section-4">
+     
+        <div>
+            <img src="./static/images/volt1.png" height="50" width="70"></img>
+        </div>
+       
+               
+
+      <p class="forloop2" style="border:black 2px solid; border-style:outset;" index={{i}}> {{sortto[i][1]}} </p>
+    </section>
+    <section class="section-5">
+     
+        <div>
+            <img src="./static/images/cur.png" height="70" width="80"></img>
+        </div>
+       
+               
+
+   <p class="forloop3"  style="border:black 2px solid; border-style:outset;" index={{i}}> {{sortto[i][2]}}  </p>
+       </section>
+    <section class="flowerbracket">
+        <img src="./static/images/close-bracket.png" height="500" width="200" ></img>
+    </section>
+    <section class = "section-6">
+        <h2> Actual&nbsp SOC&nbsp&nbsp&nbsp&nbsp&nbsp</h2>
+     <p class="forloop4"  style="border:black 2px solid; border-style:outset;" index={{i}}>  {{sortto[i][7]}}  </p>
+    </section>
+    <section class = "section-7">
+        <h2>Predicted SOC</h2>
+       
+ <p class="forloop5"  style="border:black 2px solid; border-style:outset;" id="loop5" index={{i}}>   {{sortto[i][8][0]}} </p>
+        
+     </section>
+        <section class = "section-8">
+        <h2>Battery &nbsp Status&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </h2>
+        {% if "good" in batterystatus[i] %}
+              {% set colr="col" %}
+        {% endif %}
+         {% if "replaced" in batterystatus[i] %}
+             {% set colr="col2" %}
+        
+        {% endif %}
+ <h3 class="forloop7"  style="border:black 2px solid; border-style:outset;" id={{colr}} index={{i}}> {{batterystatus[i]}}</h3>
+     </section>
+     
+     </section>
+       
+    
+    </div>
+{% endfor %}
+
+</body>
+</html>

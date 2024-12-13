@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <title>SOH - Graphs</title>
+    <style>
+
+
+body{
+  font-family: 'Work Sans', sans-serif;
+  margin: 0 auto;
+}
+
+#navbarstart{
+    padding: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.grad-bar {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+header {
+    background: #EE7752;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+
+nav ul {
+  margin: 0;
+  padding: 10;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+    padding-bottom: 23px;
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+#abc{
+    padding-left: 25%;
+
+}
+
+
+    </style>
+</head>
+
+<body>
+    <div class="grad-bar"></div>
+    <div id="navbarstart">
+        <header>
+            <div class="container">
+              <h1 class="logo"></h1>
+              <nav>
+                <ul>
+                 <li><a href={{url_for('home')}}>Introduction</a></li>
+                  <li><a href={{url_for('models')}}>Models</a></li>
+                  <li><a href={{url_for('graph')}}>Graphs</a></li>
+                  <li><a href="https://drive.google.com/file/d/1VClk31P2C4-ZEOICSrpxE45lhHzKDYRU/view?usp=sharing">Report</a></li>
+                  <li><a href={{url_for('about')}}>About Us</a></li>
+               
+                </ul>
+              </nav>
+            </div>
+          </header>
+    </div>
+    <br>
+    <br>
+    <br>
+    <section id = "abc">
+      <div id="chartContainer1" style="width: 60%; height: 300px;display: inline-block;"></div><br/>
+      <br>
+    <br>
+    <br>
+      <div id="chartContainer2" style="width: 60%; height: 300px;display: inline-block;"></div><br/> 
+      <br>
+    <br>
+    <br>
+      <div id="chartContainer3" style="width: 60%; height: 300px;display: inline-block;"></div><br/>
+      <br>
+    <br>
+    <br>
+      <div id="chartContainer4" style="width: 60%; height: 300px;display: inline-block;"></div><br/>
+      <br>
+    <br>
+    <br>
+      <div id="chartContainer5" style="width: 60%; height: 300px;display: inline-block;"></div><br/>
+    </section>
+</body>
+<script>
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+
+	title: {
+		text: "Backpropagation LSTM with PSO and GA-SOH"
+	},
+
+	data: [{
+		type: "line",
+		startAngle: 25,
+		toolTipContent: "<b>{x}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+        color : "rgba(75,192,192,1)",
+		dataPoints:[ {x:0,y:0.80272746},
+    {x:4,y:0.781008},
+    {x:8,y:0.7765951},{
+    x: 12,y: 0.7720126},{
+     x:16,y:0.7704478},{
+    x: 20,y:0.76815414},{
+    x:24,y: 0.7590229},{x:
+     28,y:0.75738263},{x:
+     32,y:0.75166637},{x:
+     36,y:0.7497343},{x:
+     40,y:0.7494305},{x:
+     44,y: 0.7429767},{x:
+     48,y:0.74047333},{x:
+     52,y:0.7399747},{x:
+     56,y:0.7348568},{x:
+     60,y: 0.7175857},{x:
+     64,y:0.7134476},{x:
+     68,y:0.71108466},{x:
+     72,y:0.71014863},{x:
+     76,y:0.691382},{x:
+     80,y:0.6876295},{x:
+     84,y:0.6866192},
+     {x:88,y:0.68565035},
+     {x:96,y: 0.6839948} ,
+     {x:100,y: 0.67352134},
+	 {x:104,y:0.6627039}]
+    
+    
+    }]
+
+});
+chart.render();
+
+
+var chart = new CanvasJS.Chart("chartContainer2", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+
+	title: {
+		text: "Neural Network with PSO -SOH"
+	},
+	data: [{
+		type: "line",
+		startAngle: 25,
+		toolTipContent: "<b>{x}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+        color : "rgba(75,192,192,1)",
+		dataPoints:[{x:0,y:0.81865721},                   
+{x:4,y:0.81784578},
+{x:8,y:0.81456021},
+{x: 12,y:0.81162855},
+{x:16,y:0.80991319},
+{x: 20,y:0.80900626},
+{x:24,y:0.80841343},
+{x:28,y:0.80813793},
+{x:32,y:0.80455792},
+{x:36,y:0.80206772},
+{x:40,y:0.79968551},
+{x:44,y:0.79954868},
+{x:48,y:0.79827538},
+ {x:52,y:0.79480525},
+ {x:56,y:0.79451042},
+ {x:60,y:0.79378552},
+ {x:64,y:0.78147137},
+ {x:68,y:0.77485513},
+ {x:72,y:0.77351679},
+ {x:76,y:0.77243676},
+ {x:80,y:0.77128749},
+ {x:84,y:0.76803478},
+ {x:88,y:0.76770403},
+ {x:96,y:0.73100064} ,
+ {x:100,y:0.73094674},
+ {x:104,y:0.72844803},
+ {x:108,y:0.70864014},
+ {x:112,y:0.66111776},
+ {x:116,y:0.65941407},
+ {x:120,y:0.64659158},
+ {x:124,y:0.6432131},
+ {x:128,y:0.63143564},
+ {x:132,y:0.60914349},
+ {x:136,y:0.58254115},
+ {x:140,y:0.58002387},
+ {x:144,y:0.57129576},
+ {x:148,y:0.55466975},
+ {x:152,y:0.54827167}
+ ]
+	}]
+
+
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer3", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+
+	title: {
+		text: "Long Short Term Memory -SOH"
+	},
+	data: [{
+		type: "line",
+		startAngle: 25,
+		toolTipContent: "<b>{x}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+        color : "rgba(75,192,192,1)",
+		dataPoints:[
+
+ 
+        {x : 0 , y :0.7904491 },
+       {x : 4 , y :0.7904038 },
+       {x : 8 , y :0.7921619 },
+       {x : 12 , y :0.78965944},
+       {x : 16 , y :0.78552556},
+       {x : 20 , y :0.7833465 },
+       {x : 24 , y :0.78110147},
+       {x : 28 , y :0.7817111 },
+       {x : 32 , y :0.7810583 },
+       {x : 36 , y :0.7788791 },
+       {x : 40 , y :0.7763095 },
+       {x : 44 , y :0.7764205 },
+       {x : 48 , y :0.7765958 },
+       {x : 52 , y :0.77470887},
+       {x : 56 , y :0.7743202 },
+       {x : 60 , y :0.772116  },
+       {x : 64 , y :0.77182233},
+       {x : 68 , y :0.77177906},
+       {x : 72 , y :0.7704189 },
+       {x : 76 , y :0.767723  },
+       {x : 80 , y :0.7673619 },
+       {x : 84 , y :0.76774156},
+       {x : 88 , y :0.76869106},
+       {x : 92 , y :0.768047  },
+       {x : 96 , y :0.7659827 }
+]
+	}]
+});
+chart.render();
+
+
+var chart = new CanvasJS.Chart("chartContainer4", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+
+	title: {
+		text: "L2 ( Ridge Regression ) - SOH"
+	},
+	data: [{
+		type: "line",
+		startAngle: 25,
+		toolTipContent: "<b>{x}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+        color : "rgba(75,192,192,1)",
+		dataPoints:[ {x:0,y:0.82979059},
+    {x:4,y:0.82366587},
+    {x:8,y:0.82324111},{
+    x: 12,y:0.82029025},{
+     x:16,y:0.81956422},{
+    x: 20,y:0.81877289},{
+    x:24,y:0.81658196},{x:
+     28,y:0.80588368},{x:
+     32,y:0.80552651},{x:
+     36,y:0.80253876},{x:
+     40,y:0.80159724},
+     {x:44,y:0.79997577},{x:
+     48,y:0.79980376},{x:
+     52,y:0.79918185},
+     {x:56,y:0.7988764},{x:
+     60,y:0.79720717},{x:
+     64,y:0.79429152},{x:
+     68,y:0.7903379},{x:
+     72,y:0.790146},{x:
+     76,y:0.78932595},{x:
+     80,y:0.78708943},{x:
+     84,y:0.78483309},
+     {x:88,y:0.78072155},
+     {x:96,y:0.77992849} ,
+     {x:100,y:0.77750915},
+     {x:104,y:0.77576419},
+     {x:108,y:0.76991482},
+     {x:112,y:0.76382861},
+     {x:116,y:0.76133283},
+     {x:120,y:0.76110692},
+     {x:124,y:0.76066763},
+     {x:128,y:0.75767988},
+     {x:132,y:0.75713129},
+     {x:136,y:0.75519351},
+     {x:140,y:0.75399642},
+     {x:144,y:0.75386498},
+     {x:148,y:0.75264504},
+     {x:152,y:0.74939743},
+     {x:156,y:0.74588679},
+     {x:160,y:0.74487652},
+     {x:164,y:0.74294743},
+     {x:168,y:0.74116106},
+     {x:172,y:0.74094642},
+     {x:176,y:0.73774952},
+     {x:180,y:0.73685027},
+     {x:184,y:0.73596143},
+     {x:188,y:0.73323843}
+
+     ]
+	}]
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer5", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+
+	title: {
+		text: "Support Vector Regression-SOH"
+	},
+	data: [{
+		type: "line",
+		startAngle: 25,
+		toolTipContent: "<b>{x}</b>: {y}",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+        color : "rgba(75,192,192,1)",
+		dataPoints:[ {x:0,y:0.82979059},
+    {x:4,y:0.82366587},
+    {x:8,y:0.82324111},{
+    x: 12,y:0.82029025},{
+     x:16,y:0.81956422},{
+    x: 20,y:0.81877289},{
+    x:24,y:0.81658196},{x:
+     28,y:0.80588368},{x:
+     32,y:0.80552651},{x:
+     36,y:0.80253876},{x:
+     40,y:0.80159724},
+     {x:44,y:0.79997577},{x:
+     48,y:0.79980376},{x:
+     52,y:0.79918185},
+     {x:56,y:0.7988764},{x:
+     60,y:0.79720717},{x:
+     64,y:0.79429152},{x:
+     68,y:0.7903379},{x:
+     72,y:0.790146},{x:
+     76,y:0.78932595},{x:
+     80,y:0.78708943},{x:
+     84,y:0.78483309},
+     {x:88,y:0.78072155},
+     {x:96,y:0.77992849} ,
+     {x:100,y:0.77750915},
+     {x:104,y:0.77576419},
+     {x:108,y:0.76991482},
+     {x:112,y:0.76382861},
+     {x:116,y:0.76133283},
+     {x:120,y:0.76110692},
+     {x:124,y:0.76066763},
+     {x:128,y:0.75767988},
+     {x:132,y:0.75713129},
+     {x:136,y:0.75519351},
+     {x:140,y:0.75399642},
+     {x:144,y:0.75386498},
+     {x:148,y:0.75264504},
+     {x:152,y:0.74939743},
+     {x:156,y:0.74588679},
+     {x:160,y:0.74487652},
+     {x:164,y:0.74294743},
+     {x:168,y:0.74116106},
+     {x:172,y:0.74094642},
+     {x:176,y:0.73774952},
+     {x:180,y:0.73685027},
+     {x:184,y:0.73596143},
+     {x:188,y:0.73323843}
+
+     ]
+	}]
+
+
+});
+chart.render();
+</script>
+</html>

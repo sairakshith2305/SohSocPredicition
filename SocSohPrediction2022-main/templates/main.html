@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>models</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='./styles/main.css') }}">
+
+  
+    <style>
+        body{
+  font-family: 'Work Sans', sans-serif;
+  margin: 0 auto;
+}
+
+#navbarstart{
+    padding: 5px;
+    padding-bottom: 5px;
+    font-family: 'Work Sans', sans-serif;
+}
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.grad-bar {
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+header {
+    background: #EE7752;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 10px 0;
+}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+}
+
+nav ul {
+  margin: 0;
+  padding: 10;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  position: relative;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+h5{
+    font-weight: 600;
+}
+.main{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+}
+    </style>
+  </head>
+  <body>
+
+    <div class="grad-bar"></div>
+    <div id="navbarstart">
+        <header>
+            <div class="container">
+              <h1 class="logo"></h1>
+              <nav>
+                <ul>
+                <li><a href={{url_for('home')}}>Introduction</a></li>
+                  <li><a href={{url_for('models')}}>Models</a></li>
+                  <li><a href={{url_for('graph')}}>Graphs</a></li>
+                  <li><a href="https://drive.google.com/file/d/1VClk31P2C4-ZEOICSrpxE45lhHzKDYRU/view?usp=sharing">Report</a></li>
+                  <li><a href={{url_for('about')}}>About Us</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+    </div>
+<div class="container">
+<br>
+<br>
+        <div class="row">
+       
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                
+                    <div class="job">
+                        <span class="colors1 mb-4">LSTM</span>
+                        <h5><a href="#" class="main"> Long Short Term Memory </a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>It is a special kind of RNN, capable of learning long-term dependencies.</p>
+                            </li>
+                           
+                        </ul>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="left">
+                               <a href={{url_for('mlstmsoh')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+
+                            </div>
+                    <a href={{url_for('mlstmsoc')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+                        </div>
+                    </div>
+               
+                </div>
+    
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                    <div class="job">
+                        <span class="colors2 mb-4">SVR</span>
+                        <h5><a href="#">Support Vector Regression</a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>
+It is a classification algorithm that applies it to predict real values rather than a class.</p>
+                            </li>
+                           
+                        </ul>
+                        <div class="pricing d-flex justify-content-between align-items-center">
+                            <div class="left">
+                               <a href={{url_for('svrsoh')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+                            </div>
+                            <a href={{url_for('svrsoc')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                    <div class="job">
+                        <span class="colors3 mb-4">L2</span>
+                        <h5><a href="#">Ridge Regressor</a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>It is a ensemble learning method for classification, regression and other tasks.
+
+</p>
+                            </li>
+                           
+                        </ul>
+                        <div class="pricing d-flex justify-content-between align-items-center">
+                            <div class="left">
+                               <a href={{url_for('l2soh')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+                            </div>
+                            <a href={{url_for('l2soc')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                    <div class="job">
+                        <span class="colors4 mb-4">NN-PSO</span>
+                        <h5><a href="#">Neural Network with PSO</a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>It is a method in artificial intelligence that teaches computers to process data in a way that is inspired by the human brain.</p>
+                            </li>
+                           
+                        </ul>
+                        <div class="pricing d-flex justify-content-between align-items-center">
+                            <div class="left">
+                               <a href={{url_for('nnsoh')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+                            </div>
+                        <a href={{url_for('nnsoc')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                    <div class="job">
+                        <span class="colors5 mb-4">BP-PSO &ampGA</span>
+                        <h5><a href="#">Back Propagation LSTM with PSO and GA</a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>It is the practice of fine-tuning the weights of a neural net based on the error rate obtained in the previous epoch.</p>
+                            </li>
+                           
+                        </ul>
+                        <div class="pricing d-flex justify-content-between align-items-center">
+                            <div class="left">
+                               <a href={{url_for('gasoh')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+                            </div>
+                        <a href={{url_for('gasoc')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="category mb-30">
+                    <div class="job">
+                        <span class="colors2 mb-4">Graph</span>
+                        <h5><a href="#">Graphical Representation of Prediction</a></h5>
+                        <ul class="place">
+                            <li>
+                                <p><i class="fas fa-map-marker-alt pe-2"></i>Comparing soc and soh prediction of all models through graphical representation </p>
+                            </li>
+            
+                        </ul>
+                        <div class="pricing d-flex justify-content-between align-items-center">
+                            <div class="left">
+                               <a href={{url_for('graphforSOH')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOH</a>
+                            </div>
+   <a href={{url_for('graphforSOC')}} class="btn btn-secondary btn active" role="button" aria-pressed="true">SOC</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+  
+  </body>
+</html>
